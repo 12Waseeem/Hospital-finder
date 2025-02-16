@@ -170,7 +170,7 @@ function App() {
         </div>
       )}
     </div>
-  );git init
+  );
 
 }
 
