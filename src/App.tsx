@@ -97,6 +97,7 @@ function App() {
 
   const handleSignIn = async () => {
     try {
+      alert('Please enable location services before logging in Try Again!.');
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
       toast.success('Successfully signed in!');
@@ -135,6 +136,7 @@ function App() {
       {!user ? (
         <div className="h-screen flex flex-col items-center justify-center">
           <h1 className="text-2xl font-semibold mb-4">Welcome to Hospital Finder</h1>
+          <p className="text-sm text-gray-600 mb-2">Please enable location services before logging in.</p>
           <button onClick={handleSignIn} className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all">
             Sign in with Google
           </button>
@@ -171,7 +173,6 @@ function App() {
       )}
     </div>
   );
-
 }
 
 export default App;
